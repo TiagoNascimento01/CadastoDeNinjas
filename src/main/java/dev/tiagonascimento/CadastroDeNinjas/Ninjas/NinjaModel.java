@@ -1,5 +1,6 @@
-package dev.tiagonascimento.CadastroDeNinjas;
+package dev.tiagonascimento.CadastroDeNinjas.Ninjas;
 
+import dev.tiagonascimento.CadastroDeNinjas.Missoes.MissoesModel;
 import jakarta.persistence.*;
 
 @Entity
@@ -12,6 +13,11 @@ public class NinjaModel {
     private String name;
     private String email;
     private int idade;
+
+    //@ManyToOne um ninja tem uma unica missao por vez, mas varios ninjas podem estar na mesma missão.
+    @ManyToOne
+    JoinColumn(name = "missoes_id");
+    private MissoesModel missoes;
 
     public NinjaModel() {
     }
