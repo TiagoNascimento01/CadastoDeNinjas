@@ -1,4 +1,4 @@
 package dev.tiagonascimento.CadastroDeNinjas.Ninjas;
 
-public class NinjaRepository {
+public interface NinjaRepository {
 }
