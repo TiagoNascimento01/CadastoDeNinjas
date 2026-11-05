@@ -1,9 +1,7 @@
 package dev.tiagonascimento.CadastroDeNinjas.Ninjas;
 
 import org.springframework.stereotype.Service;
-import org.w3c.dom.stylesheets.LinkStyle;
 
-import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,13 +14,20 @@ public class NinjaService {
         this.ninjaRepository = ninjaRepository;
     }
 
+    // Busca todos da lista
     public List<NinjaModel> listarNinjas() {
         return ninjaRepository.findAll();
     }
 
-    public NinjaModel listarNinjaPorId(Long id) {
+    // Busca por ID
+    public NinjaModel buscarNinjaPorId(Long id) {
         Optional<NinjaModel> ninjaPorId = ninjaRepository.findById(id);
         return ninjaPorId.orElse(null);
+    }
+
+    // Cadastra novo ninja
+    public NinjaModel cadastrarNinja(NinjaModel ninja) {
+        return ninjaRepository.save(ninja);
     }
 
 }
