@@ -41,4 +41,9 @@ public class NinjaController {
     public void deletarNinjaPorId(@PathVariable Long id) {
         ninjaService.deletaNinjaPorId(id);
     }
+
+    @PutMapping("/atualizar/{id}")
+    public NinjaModel atualizarNinjaPorId(@PathVariable Long id, @RequestBody NinjaModel ninjaAtualizado) {
+        return ninjaService.atualizarNinja(id, ninjaAtualizado);
+    }
 }
