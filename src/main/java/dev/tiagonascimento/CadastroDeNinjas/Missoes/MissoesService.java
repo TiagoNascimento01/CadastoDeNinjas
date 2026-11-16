@@ -24,6 +24,10 @@ public class MissoesService {
     //Deletar uma missao da lista
     public void deletarMissaoPorId(Long id) {missoesRepository.deleteById(id);}
 
+    public void testar() {
+        System.out.println("Esta funcionando");
+    }
+
     //cadastrar nova missao
     public MissoesModel cadastrarNovaMissao(MissoesModel missoesModel) {
         return missoesRepository.save(missoesModel);
